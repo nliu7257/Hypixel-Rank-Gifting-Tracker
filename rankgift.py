@@ -30,11 +30,13 @@ uhMatthew = "870ed669750741c89a8947827de63912" #has api turned off
 owo67 = "c9223a82964943b6aad14f2a09bdddbf" #has api turned off
 ttiop= "e2ce3186598e458ca6da94db421644fc"
 RenoldHenold = "0ef78c1317cd450cb3a3a89b5bb578e8" #has api turned off
+Flamer777 = "52325c3bede74940addea4b05f45c324"
+ZomIsABot = "4b3367a169a44a6d9eaae7a82d82c456"
 
-list = [ItzFunday, AnimeCulture, MrEnderdan, Whyplay, drakulatand, fz4, zywr, seven04k, cassukee, noobslayer700, Choke, Ficcare, Lobby, Requestable, uhMatthew, owo67, ttiop, RenoldHenold]
+list = [ItzFunday, AnimeCulture, MrEnderdan, Whyplay, drakulatand, fz4, zywr, seven04k, cassukee, noobslayer700, Choke, Ficcare, Lobby, Requestable, uhMatthew, owo67, ttiop, RenoldHenold, Flamer777, ZomIsABot]
 
-list2 = ["ItzFunday", "AnimeCulture", "MrEnderdan", "Whyplay", "drakulatand", "fz4", "zywr", "704k", "cassukee", "noobslayer700", "Choke", "Ficcare", "Lobby", "Requestable", "uhMatthew", "owo67", "ttiop", "RenoldHenold"]
-list_ranks = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+list2 = ["ItzFunday", "AnimeCulture", "MrEnderdan", "Whyplay", "drakulatand", "fz4", "zywr", "704k", "cassukee", "noobslayer700", "Choke", "Ficcare", "Lobby", "Requestable", "uhMatthew", "owo67", "ttiop", "RenoldHenold", "Flamer777", "ZomIsABot"]
+list_ranks = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 
 gifting_message = ""
 
@@ -43,11 +45,11 @@ gifting_message = ""
 isOnline = False
 while True:
     for i in range(len(list)):
-        header = {"key": "3ba06965-3882-4621-8568-f7bb3436d87a","uuid": list[i]}
+        header = {"key": "fa80b0dc-85f4-4fea-8621-244dc7d273dd","uuid": list[i]}
         try:
             isOnline = requests.get("https://api.hypixel.net/status", params=header).json()["session"]["online"]  #error
         except KeyError:
-             print("Error: Online status for "+list2[i]+" is unknown")
+             print("Error: Online status for "+list2[i]+" is unknown. Try retrieving a new api from https://developer.hypixel.net/dashboard")
         
         if isOnline:
                 try: 
@@ -76,7 +78,7 @@ while True:
                     myobj = gTTS(text = gifting_message, lang="en", slow=False)
                     myobj.save("giftedlol.mp3")
                     os.system("start giftedlol.mp3")
-                    #os.system("oh-my-god-meme.mp3")
+                    os.system("oh-my-god-meme.mp3")
 
                     print(gifting_message)  
                     winsound.PlaySound("SystemExit", winsound.SND_ALIAS)
