@@ -32,11 +32,14 @@ ttiop= "e2ce3186598e458ca6da94db421644fc"
 RenoldHenold = "0ef78c1317cd450cb3a3a89b5bb578e8" #has api turned off
 Flamer777 = "52325c3bede74940addea4b05f45c324"
 ZomIsABot = "4b3367a169a44a6d9eaae7a82d82c456"
+qAway = "5ae4f86918f24bd2a77391f377830be8"
+Kxric = "8b4d398bdfdb4011b9d96b291f28fb5c" #gifts people minding their own business 
+hewty = "d347e56c69cd48489983b69e90614846"
 
-list = [ItzFunday, AnimeCulture, MrEnderdan, Whyplay, drakulatand, fz4, zywr, seven04k, cassukee, noobslayer700, Choke, Ficcare, Lobby, Requestable, uhMatthew, owo67, ttiop, RenoldHenold, Flamer777, ZomIsABot]
+list = [ItzFunday, AnimeCulture, MrEnderdan, Whyplay, drakulatand, fz4, zywr, seven04k, cassukee, noobslayer700, Choke, Ficcare, Lobby, Requestable, uhMatthew, owo67, ttiop, RenoldHenold, Flamer777, ZomIsABot, qAway, Kxric, hewty]
 
-list2 = ["ItzFunday", "AnimeCulture", "MrEnderdan", "Whyplay", "drakulatand", "fz4", "zywr", "704k", "cassukee", "noobslayer700", "Choke", "Ficcare", "Lobby", "Requestable", "uhMatthew", "owo67", "ttiop", "RenoldHenold", "Flamer777", "ZomIsABot"]
-list_ranks = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+list2 = ["ItzFunday", "AnimeCulture", "MrEnderdan", "Whyplay", "drakulatand", "fz4", "zywr", "704k", "cassukee", "noobslayer700", "Choke", "Ficcare", "Lobby", "Requestable", "uhMatthew", "owo67", "ttiop", "RenoldHenold", "Flamer777", "ZomIsABot", "qAway", "Kxric", "hewty"]
+list_ranks = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 
 gifting_message = ""
 
