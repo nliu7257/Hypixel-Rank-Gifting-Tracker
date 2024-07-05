@@ -47,17 +47,7 @@ list_ranks = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
 gifting_message = ""
 
 requests_per_min = 0
-
-def countdown(i):
-    counter = i
-    while True:
-        if (counter == i):
-            counter = 0
-            requests_per_min=0
-        counter = counter + 1
-        time.sleep(1)
-
-countdown(60)
+counter =0
 
 isOnline = False
 while True:
@@ -65,7 +55,7 @@ while True:
         print("Too many requests. You are being rate limited")
         break
     for i in range(len(list)):
-        header = {"key": "","uuid": list[i]}
+        header = {"key": "e1c65368-7f31-49ff-8858-ea7ca147bee1","uuid": list[i]}
         try:
             isOnline = requests.get("https://api.hypixel.net/status", params=header).json()["session"]["online"]  #error
             requests_per_min+=1
@@ -80,13 +70,11 @@ while True:
                     requests_per_min+=3
                 except:
                     print("Error occured while retrieving "+list2[i]+ "'s data \n")
-                    time.sleep(2)
                     continue
                 try:
                     gifted_ranks = z["player"]["giftingMeta"]["ranksGiven"] #error #this line of code doesn't work for noobslayer700
                 except:
                     print(list2[i]+ " hasn't gifted any ranks yet! \n")
-                    time.sleep(2)
                     continue
 
                 print(list2[i] + " Is Currently Online")
@@ -104,16 +92,16 @@ while True:
 
                     print(gifting_message)  
                     winsound.PlaySound("SystemExit", winsound.SND_ALIAS)
-                    #time.sleep(2)
-                    #winsound.PlaySound("SystemExit", winsound.SND_ALIAS)
-                    #time.sleep(2)
-                    #winsound.PlaySound("SystemExit", winsound.SND_ALIAS)
 
                 list_ranks[i] = gifted_ranks
         else:
             print(list2[i] + " Is Offline or has their API turned off\n")
 
         time.sleep(2)
+        counter+=2
+        if(counter>=60):
+            counter = 0
+            requests_per_min=0
 
     # Poll every 2min
 
