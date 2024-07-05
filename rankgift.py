@@ -8,7 +8,7 @@ import os
 #data = requests.get(
    # url = "https://api.hypixel.net/player",
    # params = {
-   #     "key": "0a45f668-8e28-46e5-945d-4b235da9ee76",
+   #     "key": "",
    #     "uuid": "9110e508131448648beb3adfe5841b90"
    # }
 #).json()
