@@ -6,4 +6,5 @@ Make sure you have pip installed (You can check by running "pip --version" witho
 Then run the following lines in command prompt 
 
 pip install requests
+
 pip install gTTS
