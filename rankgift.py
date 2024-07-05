@@ -55,7 +55,7 @@ while True:
         print("Too many requests. You are being rate limited")
         break
     for i in range(len(list)):
-        header = {"key": "e1c65368-7f31-49ff-8858-ea7ca147bee1","uuid": list[i]}
+        header = {"key": "","uuid": list[i]}
         try:
             isOnline = requests.get("https://api.hypixel.net/status", params=header).json()["session"]["online"]  #error
             requests_per_min+=1
