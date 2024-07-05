@@ -8,7 +8,7 @@ import os
 #data = requests.get(
    # url = "https://api.hypixel.net/player",
    # params = {
-   #     "key": "",
+   #     "key": "0a45f668-8e28-46e5-945d-4b235da9ee76",
    #     "uuid": "9110e508131448648beb3adfe5841b90"
    # }
 #).json()
@@ -35,22 +35,40 @@ ZomIsABot = "4b3367a169a44a6d9eaae7a82d82c456"
 qAway = "5ae4f86918f24bd2a77391f377830be8"
 Kxric = "8b4d398bdfdb4011b9d96b291f28fb5c" #gifts people minding their own business 
 hewty = "d347e56c69cd48489983b69e90614846"
+NotHoly = "b45540f7993a46508632066f37609da6"
+VAC = "bbbe775067cc40aa8c1b09d306d59af4" #favorite animal is a duck
+BagelzBagel = ""
 
-list = [ItzFunday, AnimeCulture, MrEnderdan, Whyplay, drakulatand, fz4, zywr, seven04k, cassukee, noobslayer700, Choke, Ficcare, Lobby, Requestable, uhMatthew, owo67, ttiop, RenoldHenold, Flamer777, ZomIsABot, qAway, Kxric, hewty]
+list = [ItzFunday, AnimeCulture, MrEnderdan, Whyplay, drakulatand, fz4, zywr, seven04k, cassukee, noobslayer700, Choke, Ficcare, Lobby, Flamer777, ZomIsABot, qAway, Kxric, hewty, NotHoly, VAC]
 
-list2 = ["ItzFunday", "AnimeCulture", "MrEnderdan", "Whyplay", "drakulatand", "fz4", "zywr", "704k", "cassukee", "noobslayer700", "Choke", "Ficcare", "Lobby", "Requestable", "uhMatthew", "owo67", "ttiop", "RenoldHenold", "Flamer777", "ZomIsABot", "qAway", "Kxric", "hewty"]
-list_ranks = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+list2 = ["ItzFunday", "AnimeCulture", "MrEnderdan", "Whyplay", "drakulatand", "fz4", "zywr", "704k", "cassukee", "noobslayer700", "Choke", "Ficcare", "Lobby", "Flamer777", "ZomIsABot", "qAway", "Kxric", "hewty", "NotHoly", "VAC"]
+list_ranks = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 
 gifting_message = ""
 
+requests_per_min = 0
 
+def countdown(i):
+    counter = i
+    while True:
+        if (counter == i):
+            counter = 0
+            requests_per_min=0
+        counter = counter + 1
+        time.sleep(1)
+
+countdown(60)
 
 isOnline = False
 while True:
+    if(requests_per_min>=120):
+        print("Too many requests. You are being rate limited")
+        break
     for i in range(len(list)):
-        header = {"key": "fa80b0dc-85f4-4fea-8621-244dc7d273dd","uuid": list[i]}
+        header = {"key": "","uuid": list[i]}
         try:
             isOnline = requests.get("https://api.hypixel.net/status", params=header).json()["session"]["online"]  #error
+            requests_per_min+=1
         except KeyError:
              print("Error: Online status for "+list2[i]+" is unknown. Try retrieving a new api from https://developer.hypixel.net/dashboard")
         
@@ -59,6 +77,7 @@ while True:
                     x = requests.get("https://api.hypixel.net/status", params=header).json()["session"]["gameType"] #error
                     y= requests.get("https://api.hypixel.net/status", params=header).json()["session"]["mode"] #error
                     z= requests.get("https://api.hypixel.net/player", params = header).json()
+                    requests_per_min+=3
                 except:
                     print("Error occured while retrieving "+list2[i]+ "'s data \n")
                     time.sleep(2)
